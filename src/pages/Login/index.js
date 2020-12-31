@@ -9,7 +9,7 @@ import { getAssessToken } from '../../config/helper';
 
 import { Container, Button, ErrorMessage } from './styles';
 
-const URL = "http://dev.rapptrlabs.com/Tests/scripts/user-login.php"
+const URL = "https://dev.rapptrlabs.com/Tests/scripts/user-login.php"
 
 const LogIn = (props) => {
   const [email, setEmail] = useState({value: '', error: ''});
@@ -54,16 +54,24 @@ const LogIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('working')
     const data = {
       email: email.value,
       password: password.value
     }
     
     try {
-      const response = await axios.post(URL, data);
-      console.log('data ', response);
-      localStorage.setItem('assess_token', response.user_token);
+      // const response = await axios.post(URL, data, {
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'Access-Control-Allow-Origin': '*'
+      //   },
+      // });
+      // console.log('data ', response);
+      // localStorage.setItem('assess_token', response.user_token);
+      localStorage.setItem('access_token', '123');
       history.push('/list')
+
     } catch(e) {
       console.log('err ', e)
       setError('Something went wrong');

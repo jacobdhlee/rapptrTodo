@@ -9,6 +9,9 @@ export const Container = styled.div`
   > h1 {
     margin-top: 50px;
   }
+  @media only screen and (max-width: 500px) {
+    width: 90%;
+  }
 `;
 
 export const Button = styled.button`
@@ -17,6 +20,14 @@ export const Button = styled.button`
   right: 20%;
   width: 150px;
   height: 30px;
+  @media only screen and (max-width: 1000px) {
+    top: 5px;
+    right: 20px;
+  }
+  @media only screen and (max-width: 500px) {
+    top: 5px;
+    right: 5px;
+  }
 `;
 
 export const ListContainer = styled.div`
@@ -30,6 +41,10 @@ export const ListContainer = styled.div`
   ::-webkit-scrollbar {
     width: 0;
     background-color: transparent;
+  }
+
+  @media only screen and (max-width: 500px) {
+    height: 500px;
   }
 `;
 

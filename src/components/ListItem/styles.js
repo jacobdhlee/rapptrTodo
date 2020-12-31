@@ -37,6 +37,14 @@ export const SearchWrapper = styled.div`
       margin-left: 10px;
     }
   }
+  @media only screen and (max-width: 500px) {
+    width: 55%;
+    border-radius: 3px;
+    > div {
+      justify-content: center;
+      margin-right: 5px;
+    }
+  }
 `;
 
 export const Button = styled.button`

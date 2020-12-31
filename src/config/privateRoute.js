@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-import { getAssessToken } from './helper';
-
-const PrivateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({component: Component, isAuthenticate, ...rest}) => {
   return (
     <Route 
       {...rest}
-      render={() => {
-        return getAssessToken() ? (
-          <Component />
+      render={(props) => {
+        return isAuthenticate ? (
+          <Component {...props}/>
         ) : (
-          <Redirect to={{pathname: '/'}}/>
+          <Redirect to={{
+            pathname: '/', 
+            state:{from: props.location}
+            }}
+          />
         )
       }}
     />

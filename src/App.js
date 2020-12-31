@@ -5,6 +5,8 @@ import PrivateRoute from './config/privateRoute';
 
 import { Container } from './styles';
 
+import { getAssessToken } from './config/helper';
+
 import List from './pages/List';
 import LogIn from './pages/Login';
 
@@ -17,7 +19,7 @@ const App = () => {
             <LogIn />
             {/* <List /> */}
           </Route>
-          <PrivateRoute exact path='/list' component={List}/>
+          <PrivateRoute exact path='/list' component={List} isAuthenticate={getAssessToken() !== null}/>
         </Switch>
       </Router>
     </Container>

@@ -23,15 +23,15 @@ const List = () => {
   const history = useHistory()
 
   const getItems = () => {
-    // const itemsList = localStorage.getItem(getAssessToken());
-    // if(itemsList) {
-    //   changeListTodo([...JSON.parse(itemsList)]);
-    // }
+    const itemsList = localStorage.getItem(getAssessToken());
+    if(itemsList) {
+      const newTodo = JSON.parse(itemsList);
+      changeListTodo([...newTodo.todo]);
+    }
   }
 
   const setItemsList = (list) => {
-    // const itemsList = JSON.stringify(listTodo);
-    // localStorage.setItem(getAssessToken(), list);
+    localStorage.setItem(getAssessToken(), JSON.stringify({todo: list}));
   }
   
   const handleAddItem = () => {
