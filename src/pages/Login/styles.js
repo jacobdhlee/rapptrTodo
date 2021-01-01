@@ -34,4 +34,16 @@ export const ErrorMessage = styled.span`
   font-size: 16px;
   color: #FF1744;
   margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
+
+export const CheckBoxWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: -30px 0 20px 0;
+  >input {
+    margin-right: 10px;
+  }
+`

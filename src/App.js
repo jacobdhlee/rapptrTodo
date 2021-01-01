@@ -17,7 +17,6 @@ const App = () => {
         <Switch>
           <Route exact path='/'>
             <LogIn />
-            {/* <List /> */}
           </Route>
           <PrivateRoute exact path='/list' component={List} isAuthenticate={getAssessToken() !== null}/>
         </Switch>
