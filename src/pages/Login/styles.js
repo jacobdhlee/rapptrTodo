@@ -42,7 +42,7 @@ export const ErrorMessage = styled.span`
 export const CheckBoxWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin: -30px 0 20px 0;
+  margin: -15px 0 20px 0;
   >input {
     margin-right: 10px;
   }
